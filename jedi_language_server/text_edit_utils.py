@@ -64,9 +64,7 @@ class RefactoringConverter:
                 kind="rename",
                 old_uri=old_name.as_uri(),
                 new_uri=new_name.as_uri(),
-                options=RenameFileOptions(
-                    ignore_if_exists=True, overwrite=True
-                ),
+                options=RenameFileOptions(ignore_if_exists=True, overwrite=True),
             )
 
     def lsp_text_document_edits(self) -> Iterator[TextDocumentEdit]:

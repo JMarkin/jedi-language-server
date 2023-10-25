@@ -264,7 +264,10 @@ def signature_help(
     document = server.workspace.get_document(params.text_document.uri)
     jedi_script = jedi_utils.script(server.project, document)
     jedi_lines = jedi_utils.line_column(params.position)
-    signatures_jedi = jedi_script.get_signatures(*jedi_lines)
+    try:
+        signatures_jedi = jedi_script.get_signatures(*jedi_lines)
+    except:
+        return None
     markup_kind = _choose_markup(server)
     signatures = [
         SignatureInformation(
