@@ -11,15 +11,12 @@ from tests.lsp_test_client.utils import as_uri
 
 COMPLETION_TEST_ROOT = TEST_DATA / "completion"
 
-# pylint: disable=line-too-long
-
 
 def test_lsp_completion() -> None:
     """Test a simple completion request.
 
     Test Data: tests/test_data/completion/completion_test1.py
     """
-
     with session.LspSession() as ls_session:
         ls_session.initialize()
         uri = as_uri(COMPLETION_TEST_ROOT / "completion_test1.py")
@@ -77,7 +74,6 @@ def test_eager_lsp_completion() -> None:
 
     Test Data: tests/test_data/completion/completion_test1.py
     """
-
     with session.LspSession() as ls_session:
         # Initialize, asking for eager resolution.
         initialize_params = copy.deepcopy(VSCODE_DEFAULT_INITIALIZE)
@@ -95,7 +91,6 @@ def test_eager_lsp_completion() -> None:
             }
         )
 
-        # pylint: disable=line-too-long
         expected = {
             "isIncomplete": False,
             "items": [
@@ -141,7 +136,6 @@ def test_lsp_completion_class_method() -> None:
             }
         )
 
-        # pylint: disable=line-too-long
         expected = {
             "isIncomplete": False,
             "items": [
