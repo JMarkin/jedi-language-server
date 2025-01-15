@@ -4,6 +4,33 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## 0.43.1
+
+### Fixed
+
+- Removed toml-sort from pre-commit config
+
+## 0.43.0
+
+### Added
+
+- Mandatory support for Python 3.13 (by setting `jedi = "^0.19.2"`)
+
+### Removed
+
+- Dropped support for Python 3.8
+- Cleaned up dev dependencies (dropped `toml-sort` since we're not using it anymore)
+
+## 0.42.0
+
+### Fixed
+
+- Completion of dictionary keys now handles single and double quotes consistently
+
+### Changed
+
+- Jedi `Completion.path` completion items are filtered out. Resolves: <https://github.com/pappasam/jedi-language-server/issues/325>
+
 ## 0.41.4
 
 ### Fixed
